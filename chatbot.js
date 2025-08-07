@@ -1,6 +1,6 @@
 import { pipeline } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.5.1';
 
-let chatbot = await pipeline('text-generation', 'Xenova/phi-2', { quantized: true });
+let chatbot = await pipeline('text-generation', 'Xenova/distil-gpt2');
 let encoder = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
 
 let chatDiv = document.getElementById('chat');
@@ -63,3 +63,4 @@ inputBox.addEventListener('keydown', async (e) => {
 sendButton.addEventListener('click', async () => {
   await handleSend();
 });
+
